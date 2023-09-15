@@ -18,3 +18,9 @@ jobs:
           version: 1.7.2
       - name: sbt compile
         run: sbt compile
+
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: target/
