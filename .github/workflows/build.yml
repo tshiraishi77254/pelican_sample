@@ -13,7 +13,7 @@ jobs:
           distribution: 'temurin'
           java-version: '8'
       - name: Set up Sbt
-      - uses: Jtalk/setup-sbt@v2
+        uses: Jtalk/setup-sbt@v2
         with:
           version: 1.7.2
       - name: sbt compile
