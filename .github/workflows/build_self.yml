@@ -1,4 +1,4 @@
-name: Build sample 
+name: Build sample Self Hosted
 on:
   workflow_dispatch:
 
