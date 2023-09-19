@@ -16,8 +16,8 @@ jobs:
         uses: Jtalk/setup-sbt@v2
         with:
           version: 1.7.2
-      - name: sbt compile
-        run: sbt compile
+      - name: build
+        run: bash ./.github/build.sh
 
       - name: upload artifact
         uses: actions/upload-artifact@v3
