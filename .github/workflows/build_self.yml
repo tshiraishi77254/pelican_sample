@@ -6,10 +6,10 @@ on:
           type: choice
           description: self-hosted-runners
           options: 
-            - '"self-hosted"'
-            - '[ "self-hosted", "DOCKER_TEST" ]'
-            - '[ "self-hosted", "KOUTOKU_WSL_PART2" ]'
-            - '[ "self-hosted", "KOUTOKU_WSL2" ]'
+            - 'self-hosted'
+            - '[ self-hosted, DOCKER_TEST ]'
+            - '[ self-hosted, KOUTOKU_WSL_PART2 ]'
+            - '[ self-hosted, KOUTOKU_WSL2 ]'
 
 jobs:
   build:
