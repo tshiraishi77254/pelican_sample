@@ -1,1 +1,1 @@
-cp * /mnt/d/Self_hosted_result/.
+cp -rp * /mnt/d/Self_hosted_result/.
