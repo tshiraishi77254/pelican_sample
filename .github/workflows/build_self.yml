@@ -28,8 +28,5 @@ jobs:
       - name: build
         run: bash ./.github/build.sh
 
-      - name: upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: my-artifact
-          path: target/
+      - name: deploy
+        run: bash ./.github/deploy.sh
