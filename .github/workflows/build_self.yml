@@ -8,6 +8,11 @@ on:
           options: 
             - '"self-hosted"'
             - '[ "self-hosted", "DOCKER_SAMPLE_SBT" ]'
+        commit_no:
+          type: string
+          default: ""
+          required: false
+          description: コミット番号
 
 jobs:
   build:
