@@ -10,23 +10,33 @@ on:
             - '[ "self-hosted", "DOCKER_TEST" ]'
             - '[ "self-hosted", "KOUTOKU_WSL_PART2" ]'
             - '[ "self-hosted", "KOUTOKU_WSL2" ]'
-
+        buildno:
+          type: string
+          default: "0"
+          description: build-no
+    
 jobs:
   build:
     runs-on: ${{ fromJSON(github.event.inputs.runners) }}
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: ${{ github.event.inputs.buildno }}
+
       - name: Set up Java 8
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '8'
+
       - name: Set up Sbt
         uses: Jtalk/setup-sbt@v2
         with:
           version: 1.7.2
-      - name: build
+
+      - name: Build
         run: bash ./.github/build.sh
 
-      - name: deploy
+      - name: Deploy
         run: bash ./.github/deploy.sh
