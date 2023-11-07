@@ -37,11 +37,10 @@ jobs:
           name: my-artifact
           path: ./path/to/deploy-input
 
-      - name: Set up SSH
-        run: |
-          mkdir ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-
-      - name: deploy
-        run: ssh -i ~/.ssh/id_rsa pelican@bst-37d08e79-86c3-44d8-aa27-43922f6fd0ba.bastion.azure.com
+      - name: azure login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }} 
+          enable-AzPSSession: true
