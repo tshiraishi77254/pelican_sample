@@ -44,4 +44,4 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
 
       - name: deploy
-        run: ssh pelican@vm-R81U20-VitalLink-dev.japaneast.cloudapp.azure.com -vvv
+        run: ssh -i ~/.ssh/id_rsa pelican@bst-37d08e79-86c3-44d8-aa27-43922f6fd0ba.bastion.azure.com
