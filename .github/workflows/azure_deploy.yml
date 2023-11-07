@@ -1,0 +1,22 @@
+name: Build sample 
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: my-artifact
+          path: ./path/to/deploy-input
+
+      - name: Set up SSH
+        run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa  && chmod 600 ~/.ssh/id_rsa
+
+      - name: deploay
+        run: ssh -i ~/.ssh/id_rsa pelican@R81U20.japaneast.cloudapp.azure.com
+
