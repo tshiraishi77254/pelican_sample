@@ -1,4 +1,4 @@
-name: sample azure build and deploy
+name: sample azure build and deploy selfhosted
 on:
   workflow_dispatch:
 
