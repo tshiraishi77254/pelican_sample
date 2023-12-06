@@ -57,4 +57,12 @@ jobs:
           az account show
           az group list
           pwd 
-          
+
+      - name: Azure CLI script
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.30.0
+          inlineScript: |
+            az account show
+            az storage -h
+            
