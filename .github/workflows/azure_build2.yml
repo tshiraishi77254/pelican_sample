@@ -1,4 +1,4 @@
-name: sample azure build and deploy xxxxnnnnmmmmmnnnnn
+name: sample azure build and deploy xxxxnnnnmmmmmnnnnn2222
 on:
   workflow_dispatch:
 
